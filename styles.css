@@ -1,0 +1,41 @@
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-icon {
+  cursor: pointer;
+  margin-left: -25px; /* Adjust this value as needed */
+  z-index: 1;
+}
+
+input[type="password"] {
+  padding-right: 30px; /* Adjust this value as needed */
+  width: calc(100% - 30px); /* Subtract the padding */
+  /* Set border color to green */
+}
+.active-input {
+  border-color: green !important; /* Set border color for active input */
+  outline: green !important;
+}
+
+.clear-all-button {
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  margin: 0 5px;
+  color: green;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+}
