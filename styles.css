@@ -1,7 +1,8 @@
 .input-wrapper {
-  position: relative;
   display: flex;
   align-items: center;
+  flex-shrink: 10px;
+  gap: 5px;
 }
 
 .toggle-icon {
@@ -10,11 +11,24 @@
   z-index: 1;
 }
 
-input[type="password"] {
-  padding-right: 30px; /* Adjust this value as needed */
-  width: calc(100% - 30px); /* Subtract the padding */
-  /* Set border color to green */
+input[type="password"],
+input[type="text"] {
+  width: 100%; /* Ensure input fields take up the full width */
+  padding: 8px; /* Adjust padding as needed */
+  margin: 0; /* Ensure no additional margin is applied */
+  border: 1px solid transparent; /* Ensure consistent border */
+  outline: none; /* Remove outline */
+  transition: border-color 0.3s ease; /* Add transition for better UX */
+  background-color: #2b3139; /* Set background color */
+  color: white; /* Set text color */
 }
+
+@media only screen and (max-width: 500px) {
+  .cols-24 input::placeholder {
+    color: transparent;
+  }
+}
+
 .active-input {
   border-color: green !important; /* Set border color for active input */
   outline: green !important;

